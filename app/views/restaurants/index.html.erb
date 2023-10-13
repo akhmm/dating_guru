@@ -1,0 +1,74 @@
+<div class="container">
+
+  <div class="restaurant-whole-page">
+    <h2 class="restaurant-index-heading">Choose A Restaurant</h2>
+
+    <h4>Filter by cuisine:</h4>
+
+    <div class="wrapper", style="overflow-x: hidden">
+      <i class="fas fa-chevron-left fa-3x" id="carouselTriggerLeft"></i>
+      <i class="fas fa-chevron-right fa-3x" id="carouselTriggerRight"></i>
+      <div class="restaurant-category-cards">
+        <%= render "restaurants-carousel" %>
+      </div>
+    </div>
+
+  <hr>
+
+  <div class="restaurant-grid-index-with-map">
+    <div class="restaurant-index-cards">
+      <% @restaurants.each do |restaurant| %>
+        <div class="restaurant-index-card">
+          <% if restaurant.photo.attached? %>
+            <div class="restaurant-index-image text-center grid-photo">
+              <%= link_to restaurant_path(restaurant) do %>
+                <%= cl_image_tag restaurant.photo.key, height: 200, width: 300 %>
+              <% end %>
+            </div>
+
+            <div class="restaurant-index-info text-left">
+              <div class="resto-name-review">
+                <h3 id="resto-name"><%= link_to restaurant.name, restaurant_path(restaurant)  %></h3>
+              </div>
+                  <div id="resto-review">
+                    <% rand(4...5).times do %>
+
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                  </div>
+                <p><%= restaurant.description %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div id="map" class="index-map"
+      style="height: 600px !important;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>
+</div>
+
+  <script>
+    const grid = document.querySelector('.restaurant-category-cards')
+    const left = document.getElementById('carouselTriggerLeft')
+    const right = document.getElementById('carouselTriggerRight')
+    right.addEventListener('click', (event) => {
+      // Spread syntax, turns a DOMTokenList into an array
+      if ([...grid.classList].includes('middle-position')) {
+        grid.classList.add('right-position')
+      } else {
+        grid.classList.add('middle-position')
+      }
+    })
+    left.addEventListener('click', (event) => {
+      if ([...grid.classList].includes('right-position')) {
+        grid.classList.remove('right-position')
+      } else {
+        grid.classList.remove('middle-position')
+      }
+    })
+  </script>

@@ -1,0 +1,86 @@
+<form class="restaurant-category" action="/restaurants" method="GET">
+          <input class="restaurant-card-pic" type="image" name="All" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496782/category_resto_all_cvbqtn.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "All", restaurants_path %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Italian"  %>
+          <input class="restaurant-card-pic" type="image" name="Italian" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496400/category_resto_italian_fhgvbn.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Italian",restaurants_path(category: "Italian") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Japanese"  %>
+          <input class="restaurant-card-pic" type="image"  name="Japanese" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496400/category-resto-japanese_qjxudr.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Japanese", restaurants_path(category: "Japanese") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Seafood"  %>
+          <input class="restaurant-card-pic" type="image" name="Seafood" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496770/category_resto_seafoodrevised_orpu7e.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Seafood", restaurants_path(category: "Seafood") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Vegan"  %>
+          <input class="restaurant-card-pic" type="image" name="Vegan" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583496407/category_resto_vegan_boevbv.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Vegan", restaurants_path(category: "Vegan") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <input class="restaurant-card-pic" type="image" name="All" src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Vietnamese", restaurants_path %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Italian"  %>
+          <input class="restaurant-card-pic" type="image" name="Italian" src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Burgers",restaurants_path(category: "Italian") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Japanese"  %>
+          <input class="restaurant-card-pic" type="image"  name="Japanese" src="https://images.unsplash.com/photo-1567337710282-00832b415979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2688&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Indian", restaurants_path(category: "Japanese") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Seafood"  %>
+          <input class="restaurant-card-pic" type="image" name="Seafood" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Fine dining", restaurants_path(category: "Seafood") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Vegan"  %>
+          <input class="restaurant-card-pic" type="image" name="Vegan" src="https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Mediterranean", restaurants_path(category: "Vegan") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <input class="restaurant-card-pic" type="image" name="All" src="https://images.unsplash.com/photo-1516447071-1ed8f76407b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Street Food", restaurants_path %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Italian"  %>
+          <input class="restaurant-card-pic" type="image" name="Italian" src="https://images.unsplash.com/photo-1543340713-1bf56d3d1b68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1919&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Turkish",restaurants_path(category: "Italian") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Japanese"  %>
+          <input class="restaurant-card-pic" type="image"  name="Japanese" src="https://images.unsplash.com/photo-1542528180-a1208c5169a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1957&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Lebanese", restaurants_path(category: "Japanese") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Seafood"  %>
+          <input class="restaurant-card-pic" type="image" name="Seafood" src="https://images.unsplash.com/photo-1543573852-1a71a6ce19bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Desserts", restaurants_path(category: "Seafood") %>
+        </form>
+
+        <form class="restaurant-category" action="/restaurants" method="GET">
+          <%= hidden_field_tag :category, "Vegan"  %>
+          <input class="restaurant-card-pic" type="image" name="Vegan" src="https://images.unsplash.com/photo-1565355857989-333dff0b3dc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Thai", restaurants_path(category: "Vegan") %>
+        </form>

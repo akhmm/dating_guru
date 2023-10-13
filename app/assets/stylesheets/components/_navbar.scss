@@ -1,0 +1,65 @@
+.navbar-lewagon {
+  background: rgba(26, 23, 23, 0.9);
+  position: fixed;
+  text-decoration: none;
+  width: 100%;
+  position: inherit;
+  z-index: 1;
+  transition: transform .5s;
+}
+
+.navbar-lewagon a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 30px;
+  text-decoration: none;
+  // border-bottom: 3px solid transparent;
+}
+
+.navbar-nav .nav-link {
+  color: white;
+  width: 120px;
+  margin-top: 10px;
+  &:after {
+    content: '';
+    display: block;
+    border-bottom: 3px solid white;
+    transform: scaleX(0);
+    transition: 0.25s;
+    padding-top: 10px;
+  }
+  &:hover:after {
+    transform: scaleX(1);
+  }
+}
+
+.avatar {
+  margin-top: 10px;
+}
+
+.nav-item, nav {
+  padding: 0 10px;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+// kenneth
+
+// logo prevent underlining
+.navbar-logo:hover {
+    // border-bottom: 3px solid transparent !important;
+  }
+
+
+
+
+
+

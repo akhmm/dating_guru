@@ -1,0 +1,87 @@
+<form class="activity-category" action="/activities" method="GET">
+          <input class="activity-card-pic" type="image" value="All" name="museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583500331/priscilla-du-preez-gGmSBAps6K0-unsplash_zp4pto.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "All", activities_path%>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Sport"  %>
+          <input class="activity-card-pic" type="image" value="Sport" name="sport" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583500350/bruno-nascimento-PHIgYUGQPvU-unsplash_sxrbge.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Sport", activities_path(category: "Sport") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Market"  %>
+          <input class="activity-card-pic" type="image" value="Market" name="market" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583358057/jordan-madrid-NvdscovENOY-unsplash_vztthl.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Market", activities_path(category: "Market") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Museum"  %>
+          <input class="activity-card-pic" type="image" name="Museum" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583357559/category_muserum_jbirey.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Museum", activities_path(category: "Museum") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Outdoor"  %>
+          <input class="activity-card-pic" type="image" name="Theatre" src="https://res.cloudinary.com/dhhorrhuq/image/upload/v1583499938/category_act_outdoor_qxtayc.jpg" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Outdoor", activities_path(category: "Outdoor") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <input class="activity-card-pic" type="image" value="All" name="Cooking" src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Cooking", activities_path%>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Sport"  %>
+          <input class="activity-card-pic" type="image" value="Sport" name="sport" src="https://images.unsplash.com/photo-1544824082-9b29e2f106af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+          <%= link_to "Motor Sports", activities_path(category: "Sport") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Market"  %>
+          <input class="activity-card-pic" type="image" value="Market" name="market" src="https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2764&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Theatre", activities_path(category: "Market") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Museum"  %>
+          <input class="activity-card-pic" type="image" name="Movies" src="https://images.unsplash.com/photo-1527979809431-ea3d5c0c01c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1984&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Movies", activities_path(category: "Museum") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Outdoor"  %>
+          <input class="activity-card-pic" type="image" name="concerts" src="https://images.unsplash.com/photo-1523973740062-18e700e8da35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Concerts", activities_path(category: "Concerts") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <input class="activity-card-pic" type="image" value="All" name="music" src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Live Music", activities_path%>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Sport"  %>
+          <input class="activity-card-pic" type="image" value="Sport" name="dance" src="https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+          <%= link_to "Dancing", activities_path(category: "Sport") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Market"  %>
+          <input class="activity-card-pic" type="image" value="Market" name="market" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Nature", activities_path(category: "Market") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Museum"  %>
+          <input class="activity-card-pic" type="image" name="Museum" src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Animals", activities_path(category: "Museum") %>
+        </form>
+
+        <form class="activity-category" action="/activities" method="GET">
+          <%= hidden_field_tag :category, "Outdoor"  %>
+          <input class="activity-card-pic" type="image" name="Theatre" src="https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" border="0" alt="Submit" style="width: 200px; height: 120px" />
+        <%= link_to "Arcade", activities_path(category: "Outdoor") %>
+
+        </form>

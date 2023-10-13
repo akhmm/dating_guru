@@ -1,0 +1,42 @@
+// Specific CSS for your home-page
+body {
+  background-color: #f4f9f9;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Caveat', cursive;
+}
+
+h4 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+    color: initial;
+  }
+
+}
+
+.home-container {
+  @media(max-width: 992px) {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 18px;
+  }
+  @media(max-width: 768px) {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap: 18px;
+  }
+}

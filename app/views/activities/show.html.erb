@@ -1,0 +1,105 @@
+<div class="container">
+  <h2 class="activity-header m-5 text-center"><%= @activity.name %></h2>
+
+<!-- div of activity-image -->
+  <div class="activity-image mb-5">
+    <div><%= cl_image_tag @activity.photo.key, height: 500, width: 750 %></div>
+    <!-- class for information  -->
+      <div class="activity-information">
+        <h4 class="pb-4"><%= @activity.name %></h4>
+          <ol>
+            <li>
+              <b>Address: </b><%= @activity.address %>
+            </li>
+            <li>
+              <b>Opening hours: </b> <%= @activity.open_hour %>
+            </li>
+            <li>
+              <b>Contact number: </b><%= @activity.phone_number %>
+            </li>
+            <li>
+              <b>Category: </b><%= @activity.category %>
+            </li>
+            <li>
+              <b>Budget : </b>
+              <% @average_price = @activity.price/40 %>
+              <% if @average_price == 0 %>
+                <i class="fas fa-pound-sign"></i>
+              <% else %>
+                <% @average_price.times do %>
+                  <i class="fas fa-pound-sign"></i>
+                <% end %>
+              <% end %>
+            </li>
+          </ol>
+          <%= render partial: "shared/activity_modal" %>
+  </div>
+
+  <div class="show-middle-container">
+    <div>
+      <h5>Reviews</h5>
+     <% if @activity.reviews.blank? %>
+      Be the first one to leave a comment for <%= @activity.name %>
+    <% else %>
+      <% @activity.reviews.each do |review|%>
+  <!--       <div class="border ratings-table"> -->
+      <div class="mb-4">
+          <p>
+            <% if review.user.profile_photo.attached?%>
+              <%= cl_image_tag review.user.profile_photo.key,class: "avatar" %>
+            <% else %>
+              <i class="fas fa-user"></i>
+            <% end %>
+            <span class="ml-2 mr-4"><%= review.user.user_name %></span>
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <% if review.user == current_user %>
+              <%=  link_to review_path(review), method: :delete do %>
+                  <i class="fas fa-trash ml-4 review-bin"></i>
+              <% end %>
+            <% end %>
+          </p>
+          <p><%= review.content %></p>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div>
+      <hr>
+      <p class="pt-4"><%= @activity.details_description %></p>
+    </div>
+  </div>
+
+  <div class="show-ratings mb-4">
+    <h4 class="mb-4">Leave a review</h4>
+    <div class="activity-review-form mb-5">
+      <%= simple_form_for [@review] do |f| %>
+        <%= f.input :rating, collection: 1..5 %>
+        <%= f.input :content %>
+        <%= f.input :activity_id, as: :hidden, input_html: { value:  @activity.id }%>
+        <%= f.submit class: "btn btn-dark" %>
+      <% end %>
+    </div>
+
+
+  </div>
+
+  <div id="map" class="show-map"
+      style="height: 500px !important;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+<!--   </div> -->
+<br>
+
+<br>
+
+
+</div>
+</div>
+

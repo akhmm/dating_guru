@@ -1,0 +1,14 @@
+<h2>
+  <%= @title.upcase %>
+</h2>
+
+<%= link_to "All the activities", activities_path, class: "btn btn-outline-warning" %>
+
+<ul>
+<% @activities.each do |activity| %>
+  <li>
+    <%= activity.name %>
+  </li>
+
+<% end %>
+</ul>

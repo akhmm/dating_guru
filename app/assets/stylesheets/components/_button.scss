@@ -1,0 +1,71 @@
+.arrows {
+  font-size: 50px;
+  color: lightgrey;
+  opacity: 0.8;
+  position: absolute;
+  z-index: 1;
+}
+
+.btn-dark:hover {
+    background-color: #525151 !important;
+}
+
+.btn-dark {
+  a {
+    color: white;
+  }
+}
+
+
+.small-booking-button {
+  display: flex;
+  align-items: center;
+  border: solid 1px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.booking-button {
+ width:200px;
+ border: solid 1px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display : flex;
+  margin-bottom: 10px;
+}
+
+.b-photo {
+  margin-right: 10px;
+}
+
+.b-name {
+  display: flex;
+  align-items: center;
+}
+
+.b-card-item {
+  align-items: center;
+}
+
+// kenneth
+
+.fa-chevron-left{
+background-color: none;
+z-index: 1;
+padding: 36px 0px;
+background-color: rgba(0, 0, 0, 0.2);
+  &:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+.fa-chevron-right{
+background-color: none;
+z-index: 1;
+padding: 36px 0px;
+background-color: rgba(0, 0, 0, 0.2);
+  &:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+

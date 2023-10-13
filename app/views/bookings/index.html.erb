@@ -1,0 +1,68 @@
+<div class="container text-align-center"> <!-- container for whole page -->
+<h1 class="text-center mt-4 mb-5">Your date plans</h1>
+
+
+  <% @bookings.order(date: :desc).each do |booking| %>
+
+
+    <%= link_to booking_path(booking) do %>
+    <div class="booking-plan">
+      <div class="booking-index-function">
+        <% if booking.date %>
+          <p class="text-center"><%= booking.date%></p>
+        <% end %>
+
+      <!-- Booking confirm -->
+        <% if booking.confirmed %>
+          <p class="text-center">Booking Confirmed <i class="fas fa-calendar-check"></i></p>
+         <% else %>
+          <p class="text-center">Not yet confirmed <i class="fas fa-exclamation-triangle"></i></p>
+        <% end %>
+      </div>
+
+
+      <div class="bookings-index-content">
+
+        <!-- Activity -->
+        <div class="booking-index-activity">
+          <% if booking.activity %>
+            <%= booking.activity.name %>
+            <%= cl_image_tag booking.activity.photo.key, height: 200, width: 280, class: "booking-cards-sm" %>
+          <% else %>
+            <div class="index-blank-activity">
+              <p>No activity chosen yet</p>
+            </div>
+          <% end %>
+        </div>
+
+       <!-- Restaurant -->
+        <div class="booking-index-resto">
+          <% if booking.restaurant %>
+            <%= booking.restaurant.name %>
+            <%= cl_image_tag booking.restaurant.photo.key, height: 200, width: 280, class: "booking-cards-sm" %>
+          <% else %>
+            <div class="index-blank-restaurant">
+              <p>No restaurant chosen yet</p>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+      <!-- trash should be outside of the each -->
+      <% end %>
+
+
+     <i class="fas fa-trash trash" id="sweet-alert-demo"></i>
+        <%= link_to booking_path(booking), method: :delete, class: 'd-none target' do %>
+        <% end %>
+        </div>
+
+  <% end %>
+
+
+
+</div><!--  div for whole container -->
+
+
+
+

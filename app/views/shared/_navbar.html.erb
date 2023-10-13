@@ -1,0 +1,71 @@
+<% if user_signed_in? %>
+
+<div class="navbar navbar-expand-sm navbar-lewagon" <%= 'style=position:absolute;background:rgba(26,23,23,0)' if params[:action] == 'home' %>>
+  <%= link_to root_path, class: "navbar-brand navbar-logo" do %>
+    <%= image_tag "heartlogo.png"%>
+  <% end %>
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <%= link_to "Activities", activities_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Restaurants", restaurants_path, class: "nav-link" %>
+      </li>
+    </ul>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Dating Plans", bookings_path, class: "nav-link" %>
+      </li>
+
+      <li class="nav-item dropdown">
+        <% if current_user.profile_photo.attached?%>
+        <%= cl_image_tag current_user.profile_photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+        <%= image_tag "nouser.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
+        <div class="dropdown-menu dropdown-menu-right dropdown-items" id="dropdown-text" aria-labelledby="navbarDropdown">
+          <%= link_to "Settings", "#", class: "dropdown-item", style:'color:black' %>
+          <%= link_to "Edit", edit_user_registration_path, class: "dropdown-item", style:'color:black' %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item", style:'color:black' %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- repetition -->
+<% else %>
+<div class="navbar navbar-expand-sm navbar-lewagon" <%= 'style=position:absolute;background:rgba(26,23,23,0.4)' if params[:action] == 'home' %>>
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "heartlogo.png" %>
+  <% end %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "Activities", activities_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Restaurants", restaurants_path, class: "nav-link" %>
+      </li>
+    </ul>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Dating Plan", bookings_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Login", user_session_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+      </li>
+    </ul>
+  </div>
+</div>
+<% end %>

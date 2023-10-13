@@ -1,0 +1,5 @@
+meta_product_name: "Dating Guru"
+meta_title: "Dating Guru - Kit for indecisive couples"
+meta_description: "A date planner for lazy couples to explore things to do with minimal effort."
+meta_image: "datingguru.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

@@ -1,0 +1,26 @@
+.log-in-header {
+  margin: 40px;
+}
+
+.login-button {
+    border: solid 1px #2C3759;
+    &:hover {
+      background-color: white;
+    }
+}
+
+.login-page {
+  max-width: 300px;
+}
+
+.credentials {
+  text-align: left;
+}
+
+.links {
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: darkgrey;
+  }
+}

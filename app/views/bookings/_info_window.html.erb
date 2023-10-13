@@ -1,0 +1,4 @@
+<div>
+  <h4><%= link_to thing.name, send("#{thing.class.to_s.downcase}_path", thing) %></h4>
+  <p><%= thing.address %></p>
+</div>

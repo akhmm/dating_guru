@@ -1,0 +1,74 @@
+.boooking-activity-restaurant{
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-gap: 40px;
+  margin-top: 40px;
+}
+
+.card-booking-activity{
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 380px;
+}
+
+.card-booking-restaurant{
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 380px;
+}
+
+
+.booking-activity-info{
+  padding: 20px 20px;
+}
+
+.booking-restaurant-info{
+  padding: 20px 20px;
+}
+
+.booking-confirm{
+    padding: 20px 20px;
+    margin: 0px 0px;
+    font-weight: bold;
+    height: 280px;
+    width: 250px;
+    border: solid 3px #B8B8B8;
+    border-radius: 10px;
+}
+
+.blank-choice-activity{
+  width: 380px;
+  height: 100%;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://res.cloudinary.com/dhhorrhuq/image/upload/v1583966665/Screenshot_2020-03-11_at_22.44.00_urvxsa.png);
+}
+
+.blank-choice-resto{
+  width: 380px;
+  height: 100%;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://res.cloudinary.com/dhhorrhuq/image/upload/v1583962339/resto_photo_qse1nt.jpg);
+}
+
+
+
+.map-booking-show{
+  // width: 900px !important;
+  margin: auto;
+}
+
+.mapboxgl-canvas {
+  width: 100% !important;
+}

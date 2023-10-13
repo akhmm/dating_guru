@@ -1,0 +1,36 @@
+.activity-image{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+   @media(max-width: 790px) {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap: 18px;
+  }
+
+
+}
+
+.activity-information {
+  text-align: left;
+  padding-left: 20px;
+  ol{
+    padding: 0;
+    list-style: none;
+  }
+
+}
+
+.show-ratings, .activity-review-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show-map{
+  width: 690px
+}
+
+.fa-star {
+  color: #f2d163;
+}

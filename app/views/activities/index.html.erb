@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="activity-whole-page">
+    <h2 class="activity-index-heading">Choose An Activity</h2>
+
+    <h4>Filter by category:</h4>
+
+    <!-- arrows for wrapper fontawesome -->
+      <div class="wrapper", style=" overflow-x: hidden">
+        <i class="fas fas fa-chevron-left fa-3x" id="carouselTriggerLeft"></i>
+        <i class="fas fa-chevron-right fa-3x" id="carouselTriggerRight"></i>
+        <div class="activity-category-cards">
+          <%= render "activities-carousel" %>
+        </div>
+    </div>
+
+
+  <hr>
+
+  <div class="activity-grid-index-with-map">
+    <div class="activity-index-cards">
+      <% @activities.each do |activity| %>
+        <div class="activity-index-card">
+          <% if activity.photo.attached? %>
+            <div class="activity-index-image text-center grid-photo">
+              <%= link_to activity_path(activity) do %>
+                <%= cl_image_tag activity.photo.key, height: 200, width: 300 %>
+              <% end %>
+            </div>
+
+            <div class="activity-index-info text-left">
+              <div class="activity-name-review">
+                <h3 id="activity-name"><%= link_to activity.name, activity_path(activity)  %></h3>
+              </div>
+                <div id="activity-review">
+                  <% rand(4..5).times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  </div>
+                <p><%= activity.description %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div id="map" class="index-map"
+      style="height: 600px !important; "
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- DO NOT DELETE following code here
+ -->  <%#= link_to "Museum", category(category: Museum) %>
+  <%# @categories_unique.each do |category| %>
+     <!--  <form id="category" action="/category" method="GET"> -->
+      <%#= hidden_field_tag :category, category  %>
+      <!-- <input type="image" value="#{category}" src="https://jekyllcodex.org/uploads/grumpycat.jpg" border="0" alt="Submit" style="width: 50px;" />
+<%#= submit_tag  "#{category}"  %> -->
+    <!-- </form>-->
+  <%# end %>
+
+  <script>
+    document.addEventListener('turbolinks:load', () => {
+      const grid = document.querySelector('.activity-category-cards')
+      const left = document.getElementById('carouselTriggerLeft')
+      const right = document.getElementById('carouselTriggerRight')
+      right.addEventListener('click', (event) => {
+        // Spread syntax, turns a DOMTokenList into an array
+        if ([...grid.classList].includes('middle-position')) {
+          grid.classList.add('right-position')
+        } else {
+          grid.classList.add('middle-position')
+        }
+      })
+      left.addEventListener('click', (event) => {
+        if ([...grid.classList].includes('right-position')) {
+          grid.classList.remove('right-position')
+        } else {
+          grid.classList.remove('middle-position')
+        }
+      })
+    })
+
+  </script>
+
